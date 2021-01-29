@@ -1,0 +1,47 @@
+<center>
+
+<h1>{{title}} TO-DO List</h1>
+
+<form action="/todo" method="POST">
+
+    {{!-- <input type="text" placeholder="enter your task"><br><br> --}}
+    {{!-- <input type="submit" value="ENTER"> --}}
+
+    <div class="input-group mb-3" class="container">
+
+    <span class="input-group-text" id="basic-addon1">Enter Your Task Here</span>
+    <input required type="text" class="form-control" autocomplete="off" placeholder="Task To Do" aria-label="task" aria-describedby="basic-addon1" name="task">
+    
+    </div>
+
+    <input type="submit" class="btn btn-primary" value="ENTER">
+
+</form><br><br><br>
+
+
+
+
+{{#each entry}}
+<div class="card" style="width: 18rem; background-color:grey; text-align:center">
+  <div class="card-body">
+<center>
+
+    <ul>
+    
+    <ul>{{this.task}}</ul>
+    
+    </ul>
+
+</center>
+
+    <a href="/edit/{{this.id}}" class="btn btn-warning">EDIT</a>
+
+    <a href="/delete/{{this.id}}" class="btn btn-danger">DELETE</a>
+
+
+  </div>
+</div><br>
+{{/each}}
+
+
+</center>
